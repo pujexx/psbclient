@@ -1,0 +1,19 @@
+
+<table border="1">
+     <tr>
+        <td>Nomer UAN</td>
+        <td>Nama</td>
+        <td>NIP Komulatif</td>
+    </tr>
+<?php foreach($daftar as $dtr):?>
+
+    <tr>
+        <td><?php echo $dtr['id_pendaftar']?></td>
+        <td><?php echo $dtr[];?></td>
+        <td><?php 
+        $nilai = $this->seleksi_model->get_nilai($dtr['id_pendaftar']);
+        print_r($nilai);
+        ?></td>
+    </tr>
+<?php endforeach;?>
+</table>

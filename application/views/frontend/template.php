@@ -5,10 +5,10 @@
         <meta name="description" content="" />
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>PSB </title>
-        <script type="text/javascript" src="<?php echo base_url();?>/themes/frontend/js/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>/themes/frontend/js/jquery.min.js"></script>
         <link href="<?php echo base_url() ?>themes/frontend/css/style.css" rel="stylesheet" type="text/css" media="screen" />
         <script type="text/javascript">
-          
+        
             function loadpage(go,url,target){
                 $(document).ready(function(){
                     $(target).hide();
@@ -52,6 +52,7 @@
                         tempat_lahir: $('#tempat_lahir').val(),
                         tanggal_lahir:$('#tanggal_lahir').val(),
                         agama : $('#agama').val(),
+                        jenis_kelamin :$('#jenis_kelamin').val(),
                         alamat:$('#alamat').val(),
                         notelp: $('#notelp').val(),
                         sekolahasal :$('#sekolahasal').val(),
@@ -71,7 +72,7 @@
                         dataType: "",
                         success: function(msg){
                           
-                          //  alert($("#form_pendaftaran").serialize());
+                            //  alert($("#form_pendaftaran").serialize());
                             $('#loading').hide();   
                             //alert(msg);
                             //                      
@@ -88,7 +89,16 @@
                     });
                           
                 });
+              
             }
+            var auto_refresh = setInterval(
+            function()
+            {
+                $("#loading").show();
+                $('#list_daftar').fadeOut('slow').load('<?php echo site_url('daftar/refresh'); ?>').fadeIn("slow");
+               $("#loading").hide(1000);
+            }, 10000);
+    
         </script>
     </head>
     <body>
