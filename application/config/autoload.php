@@ -130,7 +130,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array();
+$autoload['model'] = array('page_model');
 
 
 /* End of file autoload.php */

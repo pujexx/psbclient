@@ -96,7 +96,7 @@
             {
                 $("#loading").show();
                 $('#list_daftar').fadeOut('slow').load('<?php echo site_url('daftar/refresh'); ?>').fadeIn("slow");
-               $("#loading").hide(1000);
+                $("#loading").hide(1000);
             }, 10000);
     
         </script>

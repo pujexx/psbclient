@@ -1,10 +1,12 @@
 <div id="menu">
     <ul>
-        <li ><a href="#">Homepage</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Photos</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Links</a></li>
-        <li><a href="#">Contact</a></li>
+        <li ><a href="<?php echo site_url(); ?>">Home</a></li>
+        <li ><a href="<?php echo site_url('daftar'); ?>">daftar</a></li>
+        <?php $pages= $this->page_model->get_all();?>
+        <?php foreach ($pages as $page) {
+ ?>
+            <li ><a href="<?php echo site_url('page/'); ?>"><?php echo $page['name'];?></a></li>
+
+<?php } ?>
     </ul>
 </div>

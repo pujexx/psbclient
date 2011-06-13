@@ -8,7 +8,7 @@ class Seleksi_model extends CI_Model {
 
     function get_terpilih() {
         $this->db->select('*');
-
+        
         $result = $this->db->get('identitas');
         if ($result->num_rows() > 0) {
             return $result->result_array();
