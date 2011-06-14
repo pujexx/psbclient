@@ -26,6 +26,16 @@ class Identitas_model extends CI_Model {
         }
     }
 
+    function android($id) {
+        $this->db->where('id_pendaftar', $id);
+        $result = $this->db->get('identitas');
+        if ($result->num_rows() == 1) {
+            return $result->row_array();
+        } else {
+            return FALSE;
+        }
+    }
+
     function insert($data) {
 
         $this->db->insert('identitas', $data);
@@ -57,5 +67,4 @@ class Identitas_model extends CI_Model {
     }
 
 }
-
 ?>
