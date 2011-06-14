@@ -94,9 +94,9 @@
             var auto_refresh = setInterval(
             function()
             {
-                $("#loading").show();
+                $("#loading_daftar").show();
                 $('#list_daftar').fadeOut('slow').load('<?php echo site_url('daftar/refresh'); ?>').fadeIn("slow");
-                $("#loading").hide(1000);
+                $("#loading_daftar").hide(1000);
             }, 10000);
     
         </script>
@@ -123,6 +123,7 @@
                 </div>
 
                 <div id="loading" style="display: none">loading...</div>
+              
                 <div id="content">
 
                     <?php

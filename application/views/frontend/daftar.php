@@ -2,6 +2,7 @@
     
   
 </script>
+<div id="loading_daftar" style="display: none">loading...</div>
 <div id="list_daftar">
     <table border="1" width="100%" >
         <tr>

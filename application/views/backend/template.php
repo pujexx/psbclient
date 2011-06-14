@@ -5,13 +5,13 @@
         <title>Internet Dreams</title>
         <link rel="stylesheet" href="<?php echo base_url(); ?>themes/backend/css/screen.css" type="text/css" media="screen" title="default" />
 
-        <script src="js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
+        <script src="<?php echo base_url();?>themes/backend/js/jquery/jquery-1.4.1.min.js" type="text/javascript"></script>
 
 
-        <script src="js/jquery/custom_jquery.js" type="text/javascript"></script>
+        <script src="<?php echo base_url();?>themes/backend/js/jquery/custom_jquery.js" type="text/javascript"></script>
 
 
-        <script src="js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
+        <script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.pngFix.pack.js" type="text/javascript"></script>
         <script type="text/javascript">
             $(document).ready(function(){
                 $(document).pngFix( );

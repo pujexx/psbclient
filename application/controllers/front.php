@@ -8,21 +8,22 @@ class Front extends CI_Controller {
         parent::__construct();
         $this->load->model('identitas_model');
         $this->load->model('mata_pelajaran_model');
-        
     }
 
     function index() {
-        $this->load->view('frontend/template');
-        if ($this->uri->segment(3) != "") {
-            switch ($this->uri->segment(3)) {
-                case "" :
-                    break;
-                default :
-                    break;
-            }
-        } else {
-            
-        }
+        $this->load->model('artikel_model');
+          $config = array(
+            'base_url' => site_url() . '/front/index/',
+            'total_rows' => $this->db->count_all('artikel'),
+            'per_page' => 5,
+            'uri_segment' => 3
+        );
+        $this->pagination->initialize($config);
+        $data['pagination'] = $this->pagination->create_links();
+        $data['artikels'] = $this->artikel_model->get_all($config['per_page'], $this->uri->segment(3));
+        $data['content'] = "frontend/artikel";
+     
+        $this->load->view('frontend/template',$data);
     }
 
     function page() {
@@ -43,7 +44,7 @@ class Front extends CI_Controller {
         if ($this->ajax == 1) {
 
             $this->ajax = 1;
-               $this->session->unset_userdata('nouan');
+            $this->session->unset_userdata('nouan');
             $this->load->view('frontend/form_pendaftaran');
         } else {
             $data['content'] = "frontend/form_pendaftaran";
@@ -187,26 +188,24 @@ class Front extends CI_Controller {
 
     function submit_nilai() {
         $mapel = $this->mata_pelajaran_model->tampil_pelajaran();
-      
-        foreach ($mapel as $mpl) {
-            $this->form_validation->set_rules("nilai_".$mpl['kode_mata_pelajaran'], $mpl['nama_mata_pelajaran'], 'required|numeric');
-        }    
-          if ($this->form_validation->run() == False) {
-                $this->ajax = 1;
-                $this->input_nilai();
-            } else {
-               foreach ($mapel as $mpl) {
-                   $data['id_pendaftar']=$this->session->userdata('nouan');
-                   $data['kode_mata_pelajaran']=$mpl['kode_mata_pelajaran'];
-                   $data['nilai']=$this->input->post("nilai_".$mpl['kode_mata_pelajaran']);
-                   $this->mata_pelajaran_model->insert_nilai($data);
-               }
-               $this->session->unset_userdata('nouan');
-               echo "success";
-            }
 
+        foreach ($mapel as $mpl) {
+            $this->form_validation->set_rules("nilai_" . $mpl['kode_mata_pelajaran'], $mpl['nama_mata_pelajaran'], 'required|numeric');
+        }
+        if ($this->form_validation->run() == False) {
+            $this->ajax = 1;
+            $this->input_nilai();
+        } else {
+            foreach ($mapel as $mpl) {
+                $data['id_pendaftar'] = $this->session->userdata('nouan');
+                $data['kode_mata_pelajaran'] = $mpl['kode_mata_pelajaran'];
+                $data['nilai'] = $this->input->post("nilai_" . $mpl['kode_mata_pelajaran']);
+                $this->mata_pelajaran_model->insert_nilai($data);
+            }
+            $this->session->unset_userdata('nouan');
+            echo "success";
+        }
     }
 
 }
-
 ?>

@@ -7,7 +7,7 @@ class Kategori_model extends CI_Model {
     }
 
     function get_all() {
-        $this->db->order_by('id_kategori','desc');
+        $this->db->order_by('id_kategori', 'desc');
         $result = $this->db->get('kategori');
         if ($result->num_rows() > 0) {
             return $result->result_array();
@@ -26,30 +26,21 @@ class Kategori_model extends CI_Model {
         }
     }
 
-    function insert() {
-           $data = array(
-        
-            'kategori' => $this->input->post('kategori', TRUE),
-           
-        );
+    function insert($data) {
+
         $this->db->insert('kategori', $data);
     }
 
-    function update($id) {
-        $data = array(
-         
-       'kategori' => $this->input->post('kategori', TRUE),
-       
-        );
+    function update($id, $data) {
+
         $this->db->where('id_kategori', $id);
         $this->db->update('kategori', $data);
     }
 
     function delete($id) {
-        foreach ($id as $sip) {
-            $this->db->where('id_kategori', $sip);
-            $this->db->delete('kategori');
-        }
+
+        $this->db->where('id_kategori', $id);
+        $this->db->delete('kategori');
     }
 
 }

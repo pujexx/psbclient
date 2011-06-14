@@ -58,7 +58,7 @@
 
             <?php echo form_error('password'); ?>
         </div>
-       <?php echo form_open('admin_login/index'); ?>
+       <?php echo form_open('login/index'); ?>
         <div id="login">
             <br>
             <h3 align="center">Login</h3>

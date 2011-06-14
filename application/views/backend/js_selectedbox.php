@@ -2,7 +2,7 @@
 <![if !IE 7]>
 
 <!--  styled select box script version 1 -->
-<script src="js/jquery/jquery.selectbox-0.5.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.selectbox-0.5.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('.styledselect').selectbox({ inputClass: "selectbox_styled" });
@@ -13,7 +13,7 @@
 <![endif]>
 
 <!--  styled select box script version 2 -->
-<script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -23,7 +23,7 @@
 </script>
 
 <!--  styled select box script version 3 -->
-<script src="js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.selectbox-0.5_style_2.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         $('.styledselect_pages').selectbox({ inputClass: "styledselect_pages" });

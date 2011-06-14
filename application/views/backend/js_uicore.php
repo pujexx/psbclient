@@ -1,7 +1,7 @@
-<script src="js/jquery/ui.core.js" type="text/javascript"></script>
-<script src="js/jquery/ui.checkbox.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/ui.core.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/ui.checkbox.js" type="text/javascript"></script>
 
-<script src="js/jquery/jquery.bind.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.bind.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
         $('input').checkBox();

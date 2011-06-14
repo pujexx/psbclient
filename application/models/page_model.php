@@ -17,10 +17,10 @@ class page_model extends CI_Model {
         }
     }
 
-    function get_all_admin() {
+    function get_all_admin($uri,$limit) {
         $this->db->order_by('id', 'desc');
 
-        $result = $this->db->get('page');
+        $result = $this->db->get('page',$uri,$limit);
         if ($result->num_rows() > 0) {
             return $result->result_array();
         } else {
@@ -40,6 +40,7 @@ class page_model extends CI_Model {
 
     function get_one($link) {
         $this->db->where('link', $link);
+        $this->db->where('aktif',1);
         $result = $this->db->get('page');
         if ($result->num_rows() == 1) {
             return $result->row_array();
@@ -59,7 +60,7 @@ class page_model extends CI_Model {
 
     function delete_one($id) {
 
-        $this->db->where('id', $sip);
+        $this->db->where('id', $id);
         $this->db->delete('page');
     }
 

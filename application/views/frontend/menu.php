@@ -5,7 +5,7 @@
         <?php $pages= $this->page_model->get_all();?>
         <?php foreach ($pages as $page) {
  ?>
-            <li ><a href="<?php echo site_url('page/'); ?>"><?php echo $page['name'];?></a></li>
+            <li ><a href="<?php echo site_url('page/select/'.$page['link']); ?>"><?php echo $page['name'];?></a></li>
 
 <?php } ?>
     </ul>

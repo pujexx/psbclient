@@ -1,4 +1,4 @@
-<script src="js/jquery/jquery.filestyle.js" type="text/javascript"></script>
+<script src="<?php echo base_url();?>themes/backend/js/jquery/jquery.filestyle.js" type="text/javascript"></script>
 <script type="text/javascript" charset="utf-8">
   $(function() {
       $("input.file_1").filestyle({
