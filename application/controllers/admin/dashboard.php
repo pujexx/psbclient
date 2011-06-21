@@ -1,7 +1,15 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
+class Dashboard extends CI_Controller {
+
+    function __construct() {
+        parent::__construct();
+    }
+
+    function index() {
+        $data['content'] = "dashboard";
+        $this->load->view('backend/template',$data);
+    }
+
+}
 ?>

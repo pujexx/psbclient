@@ -1,4 +1,12 @@
+<link rel="stylesheet" src="<?php echo base_url();?>/themes/frontend/css/ui-lightness/jquery-ui-1.8.13.custom.css" type="text/css"/>
+<script src="<?php echo base_url();?>/themes/frontend/js/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>
 
+<script type="text/javascript" >
+    $(document).ready(function(){
+
+        $( "#tanggal_lahir" ).datepicker();
+    });
+</script>
 <?php echo form_open('front/pendaftaran', 'id=form_pendaftaran'); ?>
 <table border="0">
     <thead>

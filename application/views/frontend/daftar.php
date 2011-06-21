@@ -15,10 +15,7 @@
             <tr>
                 <td><?php echo $dtr['id_pendaftar'] ?></td>
                 <td><?php echo $dtr['nama_pendaftar']; ?></td>
-                <td><?php
-            $nilai = $this->seleksi_model->get_nilai($dtr['id_pendaftar']);
-            echo $nilai['nilai'];
-        ?></td>
+                <td><?php echo $dtr['total']; ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
